@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useGoals } from "../contexts/GoalsContext.tsx";
 import DailyGoal from "../components/DailyGoal.tsx";
 import DailyGoalGroup from "../components/DailyGoalGroup.tsx";
-import DayPageHeader from "../components/DayPageHeader.tsx";
+import PageHeader from "../components/PageHeader.tsx";
 import "../style/DayView.scss"
 import "../style/DayPageHeader.scss"
 import {getDayName} from "../helpers/helpers.ts";
@@ -33,7 +33,7 @@ const DayView = () => {
 
     return (
         <div className="day-view-container">
-            <DayPageHeader 
+            <PageHeader 
                 title={getDayName(selectedDate)} 
                 selectedDate={selectedDate}
                 onPrev={() => setSelectedDate(prev => new Date(prev.getTime() - 24*60*60*1000))}

@@ -6,11 +6,13 @@ interface props {
     selectedDate?: Date,
     onPrev?: () => void,
     onNext?: () => void,
+    rightContent?: string,
 }
 
-const WeekPageHeader = ({title, selectedDate, onPrev, onNext}: props) => {
+const PageHeader = ({title, selectedDate, onPrev, onNext, rightContent}: props) => {
     const date = selectedDate || new Date();
-    const weekNr = getWeekNumber(date);
+    const defaultRight = `Week ${getWeekNumber(date)}`;
+    const right = rightContent || defaultRight;
 
     return (
         <div className="page-heade-container">
@@ -24,11 +26,11 @@ const WeekPageHeader = ({title, selectedDate, onPrev, onNext}: props) => {
                     {onNext && <button onClick={onNext} className="nav-button">&rarr;</button>}
                 </div>
                 <div>
-                    <p>Week {weekNr}</p>
+                    <p>{right}</p>
                 </div>
             </div>
         </div>
     );
 }
 
-export default WeekPageHeader;
+export default PageHeader;

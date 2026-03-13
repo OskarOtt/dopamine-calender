@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useGoals } from "../contexts/GoalsContext.tsx";
-import MonthPageHeader from "../components/MonthPageHeader.tsx";
+import PageHeader from "../components/PageHeader.tsx";
 import { useNavigate } from "react-router-dom";
 import "../style/MonthView.scss";
 
@@ -70,11 +70,12 @@ const MonthView = () => {
 
     return (
         <div className="month-view-container">
-            <MonthPageHeader 
+            <PageHeader 
                 title={formatMonthTitle()} 
                 selectedDate={currentMonth}
                 onPrev={handlePrevMonth}
                 onNext={handleNextMonth}
+                rightContent=""
             />
             <div className="calendar-grid">
                 {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map(day => (

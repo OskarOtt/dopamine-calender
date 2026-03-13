@@ -9,7 +9,7 @@ import AddGoalForm from "./components/AddGoalForm.tsx";
 import { GoalsProvider, useGoals } from "./contexts/GoalsContext.tsx";
 
 function AppContent() {
-    const { showModal, setShowModal, newGoal, setNewGoal, handleAddGoal } = useGoals();
+    const { showModal, setShowModal } = useGoals();
 
     return (
         <main className="main-page-container">
@@ -21,11 +21,7 @@ function AppContent() {
               <Route path="/profile" element={<Profile />} />
           </Routes>
           <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
-              <AddGoalForm
-                  newGoal={newGoal}
-                  setNewGoal={setNewGoal}
-                  handleAddGoal={handleAddGoal}
-              />
+              <AddGoalForm />
           </Modal>
         </main>
     );

@@ -1,6 +1,8 @@
 import "../style/navStyle.scss"
 import {Link} from "react-router-dom";
 import { useGoals } from "../contexts/GoalsContext.tsx";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
 import logo from "../assets/logo.jpg";
 
 const Nav = () => {

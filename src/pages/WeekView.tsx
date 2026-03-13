@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useGoals } from "../contexts/GoalsContext.tsx";
 import { GoalModel } from "../models/GoalModel.ts";
 import { getWeekNumber, formatedDate } from "../helpers/helpers.ts";
-import WeekPageHeader from "../components/WeekPageHeader.tsx";
+import PageHeader from "../components/PageHeader.tsx";
 import GoalCheckbox from "../components/GoalCheckbox.tsx";
 import "../style/WeekView.scss";
 
@@ -81,11 +81,12 @@ const WeekView = () => {
 
     return (
         <div className="week-view-container">
-            <WeekPageHeader 
+            <PageHeader 
                 title={formatWeekTitle()} 
                 selectedDate={new Date()}
                 onPrev={handlePrevWeek}
                 onNext={handleNextWeek}
+                rightContent={`${currentWeekStart.getFullYear()}`}
             />
             <div className="week-grid">
                 {weekDays.map((date, index) => (
