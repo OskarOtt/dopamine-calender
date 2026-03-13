@@ -1,0 +1,62 @@
+.daily-goal-container {
+  width: 20rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: box-shadow 0.3s ease;
+}
+
+.daily-goal-container:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.daily-goal-container.goal-done {
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+
+.goal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.goal-title {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #333;
+}
+
+.goal-icon {
+  font-size: 1.5rem;
+}
+
+.goal-description {
+  margin-bottom: 0.5rem;
+}
+
+.goal-description p {
+  margin: 0;
+  color: #666;
+}
+
+.goal-days,
+.goal-date {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+
+.daily-goal-group-container {
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 5rem;
+  justify-content: center;
+}
