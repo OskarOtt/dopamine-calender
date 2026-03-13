@@ -15,21 +15,39 @@ const PageHeader = ({title, selectedDate, onPrev, onNext, rightContent}: props) 
     const right = rightContent || defaultRight;
 
     return (
-        <div className="page-heade-container">
+        <header className="page-header-container">
             <div className="page-header">
-                <div>
+                <div className="header-left">
                     <p>{formatedDate(date)}</p>
                 </div>
                 <div className="header-center">
-                    {onPrev && <button onClick={onPrev} className="nav-button">&larr;</button>}
+                    {onPrev && (
+                        <button 
+                            onClick={onPrev} 
+                            className="nav-button" 
+                            aria-label="Previous"
+                            title="Previous"
+                        >
+                            ‹
+                        </button>
+                    )}
                     <h1>{title}</h1>
-                    {onNext && <button onClick={onNext} className="nav-button">&rarr;</button>}
+                    {onNext && (
+                        <button 
+                            onClick={onNext} 
+                            className="nav-button" 
+                            aria-label="Next"
+                            title="Next"
+                        >
+                            ›
+                        </button>
+                    )}
                 </div>
-                <div>
+                <div className="header-right">
                     <p>{right}</p>
                 </div>
             </div>
-        </div>
+        </header>
     );
 }
 
