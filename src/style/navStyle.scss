@@ -15,11 +15,12 @@
 }
 
 .nav-logo img {
-  height: 80px;
+  height: 6vh;
 }
 
 .nav-link-container {
-  width: 15vw;
+  width: 20vw;
+  min-width: 30rem;
   margin: 3rem;
   display: flex;
   justify-content: space-between;
@@ -49,6 +50,15 @@
 }
 
 .link:hover::after {
+  visibility: visible;
+  background-color: #3a3b3c;
+}
+
+.link.active {
+  font-weight: bold;
+}
+
+.link.active::after {
   visibility: visible;
   background-color: #3a3b3c;
 }

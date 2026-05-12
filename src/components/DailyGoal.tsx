@@ -35,7 +35,7 @@ const DailyGoal = ({goal, selectedDate}: Props) => {
     };
 
     return (
-        <div className={`daily-goal-container ${isChecked ? 'goal-done' : ''}`}>
+        <div className={`daily-goal-container ${isChecked ? 'goal-done' : ''}`} onClick={handleChange} style={{ cursor: 'pointer' }}>
             <div className="goal-header">
                 <h2 className="goal-title">{goal.title}</h2>
                 <div className="goal-icon">{goal.icon}</div>

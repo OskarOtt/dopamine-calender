@@ -9,7 +9,7 @@ interface GoalCheckboxProps {
 
 const GoalCheckbox: React.FC<GoalCheckboxProps> = ({ checked, onChange, text }) => {
     return (
-        <label className="goal-checkbox">
+        <label className="goal-checkbox" onClick={e => e.stopPropagation()}>
             <input
                 type="checkbox"
                 checked={checked}

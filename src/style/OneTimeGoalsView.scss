@@ -1,0 +1,93 @@
+.one-time-view-container {
+    padding: 20px;
+    min-height: 100vh;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.one-time-section {
+    margin-top: 24px;
+}
+
+.section-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 6px;
+}
+
+.completed-section {
+    margin-top: 36px;
+    opacity: 0.75;
+}
+
+.empty-message {
+    color: #999;
+    font-size: 0.95rem;
+}
+
+.one-time-goal-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07);
+    cursor: pointer;
+    transition: box-shadow 0.2s ease;
+}
+
+.one-time-goal-item:hover {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+}
+
+.one-time-goal-item.done {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.one-time-goal-item.overdue {
+    border-color: #f5c6cb;
+    background-color: #fff5f5;
+}
+
+.one-time-goal-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex: 1;
+    min-width: 0;
+}
+
+.one-time-goal-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.one-time-goal-info .goal-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.one-time-goal-info .goal-desc {
+    font-size: 0.85rem;
+    color: #666;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.one-time-goal-info .goal-date {
+    font-size: 0.82rem;
+    color: #999;
+}

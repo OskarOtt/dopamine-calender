@@ -95,7 +95,7 @@ const WeekView = () => {
                         <p className="day-date">{formatedDate(date)}</p>
                         <div className="day-goals">
                             {getGoalsForDay(index, date).map(goal => (
-                                <div key={goal.id} className={`week-goal-item ${isGoalDone(goal, date) ? 'done' : ''}`}>
+                                <div key={goal.id} className={`week-goal-item ${isGoalDone(goal, date) ? 'done' : ''}`} onClick={() => handleGoalToggle(goal, date)} style={{ cursor: 'pointer' }}>
                                     <span className="goal-icon">{goal.icon}</span>
                                     <span className="goal-title">{goal.title}</span>
                                     <GoalCheckbox checked={isGoalDone(goal, date)} onChange={() => handleGoalToggle(goal, date)} />
