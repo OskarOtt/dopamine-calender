@@ -1,6 +1,7 @@
 .week-view-container {
     padding: 20px;
     min-height: 100vh;
+    background-color: var(--color-bg);
 }
 
 .week-grid {
@@ -12,25 +13,25 @@
 }
 
 .day-column {
-    border: 1px solid #ddd;
+    border: 1px solid var(--color-border);
     border-radius: 8px;
     padding: 15px;
-    background-color: #f9f9f9;
+    background-color: var(--color-surface);
     min-height: 70vh;
     display: flex;
     flex-direction: column;
 }
 
 .day-column.today {
-    background-color: #e8f4f8;
-    border-color: #007bff;
+    background-color: var(--color-primary-light);
+    border-color: var(--color-primary);
 }
 
 .day-header {
     text-align: center;
     margin: 0 0 10px 0;
     font-size: 18px;
-    color: #333;
+    color: var(--color-text);
     font-weight: bold;
 }
 
@@ -38,7 +39,7 @@
     text-align: center;
     margin: 0 0 15px 0;
     font-size: 14px;
-    color: #666;
+    color: var(--color-text-secondary);
 }
 
 .day-goals {
@@ -53,14 +54,14 @@
     align-items: center;
     padding: 10px;
     border-radius: 6px;
-    background-color: #fff;
-    border: 1px solid #eee;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-surface-alt);
+    border: 1px solid var(--color-border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
 .week-goal-item.done {
-    background-color: #d4edda;
-    border-color: #c3e6cb;
+    background-color: var(--color-success-bg);
+    border-color: var(--color-success-border);
 }
 
 .goal-icon {
@@ -72,4 +73,5 @@
     flex: 1;
     font-size: 14px;
     font-weight: 500;
+    color: var(--color-text);
 }

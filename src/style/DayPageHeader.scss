@@ -10,14 +10,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #f8f9fa;
+  background-color: var(--color-surface);
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid var(--color-border);
+  box-shadow: 0 4px 12px rgba(107, 141, 214, 0.13);
 
   h1 {
     font-size: 2rem;
     font-weight: 600;
-    color: #333;
+    color: var(--color-text);
     margin: 0;
     text-align: center;
     flex: 1;
@@ -25,7 +26,7 @@
 
   p {
     font-size: 1rem;
-    color: #666;
+    color: var(--color-text-secondary);
     margin: 0;
     font-weight: 500;
   }
@@ -38,41 +39,40 @@
 }
 
 .header-center {
+  width: 50%;
   display: flex;
   align-items: center;
-  gap: 2px;
-  flex: 1;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .nav-button {
-  background-color: #007bff;
+  background-color: var(--color-primary);
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 10px;
   width: 36px;
   height: 36px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  font-size: 30px;
   font-weight: bold;
   transition: background-color 0.2s ease;
-  box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
+  box-shadow: 0 2px 4px var(--color-primary-shadow);
 }
 
 .nav-button:hover {
-  background-color: #0056b3;
-  box-shadow: 0 3px 6px rgba(0, 123, 255, 0.3);
+  background-color: var(--color-primary-dark);
+  box-shadow: 0 3px 6px var(--color-primary-shadow);
 }
 
 .nav-button:active {
-  background-color: #004085;
+  background-color: var(--color-primary-dark);
   transform: translateY(1px);
 }
 
 .nav-button:focus {
-  outline: 2px solid #007bff;
+  outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }

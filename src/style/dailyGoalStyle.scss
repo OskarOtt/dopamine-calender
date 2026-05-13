@@ -1,8 +1,9 @@
 .daily-goal-container {
   width: 20rem;
-  background-color: #f8f9fa;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   padding: 1rem;
   margin: 1rem;
   display: flex;
@@ -12,12 +13,12 @@
 }
 
 .daily-goal-container:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 14px rgba(107, 141, 214, 0.18);
 }
 
 .daily-goal-container.goal-done {
-  background-color: #d4edda;
-  border: 1px solid #c3e6cb;
+  background-color: var(--color-success-bg);
+  border-color: var(--color-success-border);
 }
 
 .goal-header {
@@ -30,7 +31,7 @@
 .goal-title {
   font-size: 1.2rem;
   margin: 0;
-  color: #333;
+  color: var(--color-text);
 }
 
 .goal-icon {
@@ -43,16 +44,15 @@
 
 .goal-description p {
   margin: 0;
-  color: #666;
+  color: var(--color-text-secondary);
 }
 
 .goal-days,
 .goal-date {
   margin-bottom: 0.5rem;
   font-size: 0.9rem;
-  color: #555;
+  color: var(--color-text-secondary);
 }
-
 
 .daily-goal-group-container {
   display: flex;

@@ -1,12 +1,13 @@
 .day-view-container {
     padding: 20px;
     min-height: 100vh;
+    background-color: var(--color-bg);
 }
 
 .add-goal-toggle-button {
     margin: 10px;
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: var(--color-success);
     color: white;
     border: none;
     border-radius: 5px;
@@ -15,5 +16,5 @@
 }
 
 .add-goal-toggle-button:hover {
-    background-color: #45a049;
+    background-color: var(--color-success-dark);
 }

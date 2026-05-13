@@ -1,10 +1,10 @@
 .add-goal-form {
     margin: 40px;
     padding: 40px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-border);
     border-radius: 12px;
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-surface);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
 }
 
 .form-input {
@@ -12,10 +12,18 @@
     margin-bottom: 20px;
     width: 100%;
     padding: 15px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--color-border);
     border-radius: 8px;
     font-size: 16px;
     box-sizing: border-box;
+    background-color: var(--color-surface-alt);
+    color: var(--color-text);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-light);
 }
 
 .days-selection {
@@ -25,6 +33,7 @@
 .days-selection label {
     font-weight: bold;
     margin-right: 10px;
+    color: var(--color-text);
 }
 
 .day-buttons {
@@ -35,15 +44,18 @@
 .select-all-button, .clear-all-button {
     margin-right: 10px;
     padding: 8px 12px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
+    background-color: var(--color-surface-alt);
+    border: 1px solid var(--color-border);
     border-radius: 6px;
     cursor: pointer;
     font-size: 14px;
+    color: var(--color-text-secondary);
 }
 
 .select-all-button:hover, .clear-all-button:hover {
-    background-color: #e0e0e0;
+    background-color: var(--color-primary-light);
+    border-color: var(--color-primary);
+    color: var(--color-primary-dark);
 }
 
 .day-checkbox {
@@ -56,11 +68,12 @@
     margin-right: 8px;
     width: 18px;
     height: 18px;
+    accent-color: var(--color-primary);
 }
 
 .add-button {
     padding: 18px 30px;
-    background-color: #2196F3;
+    background-color: var(--color-primary);
     color: white;
     border: none;
     border-radius: 10px;
@@ -70,7 +83,7 @@
 }
 
 .add-button:hover {
-    background-color: #1976D2;
+    background-color: var(--color-primary-dark);
 }
 
 .icon-selection {
@@ -81,6 +94,7 @@
     font-weight: bold;
     margin-right: 10px;
     display: block;
+    color: var(--color-text);
 }
 
 .icon-options {
@@ -93,9 +107,9 @@
 .icon-button {
     width: 55px;
     height: 55px;
-    border: 2px solid #ddd;
+    border: 2px solid var(--color-border);
     border-radius: 10px;
-    background: white;
+    background: var(--color-surface);
     cursor: pointer;
     font-size: 26px;
     display: flex;
@@ -105,12 +119,13 @@
 }
 
 .icon-button:hover {
-    border-color: #007bff;
+    border-color: var(--color-primary);
+    background-color: var(--color-primary-light);
 }
 
 .icon-button.selected {
-    border-color: #007bff;
-    background-color: #e7f3ff;
+    border-color: var(--color-primary);
+    background-color: var(--color-primary-light);
 }
 
 .goal-type {
@@ -123,13 +138,14 @@
     display: inline-flex;
     align-items: center;
     cursor: pointer;
+    color: var(--color-text);
 }
 
 .goal-type input[type="radio"] {
     margin-right: 8px;
     width: 16px;
     height: 16px;
-    accent-color: #007bff;
+    accent-color: var(--color-primary);
 }
 
 .date-selection {
@@ -139,4 +155,5 @@
 .date-selection label {
     font-weight: bold;
     margin-right: 10px;
+    color: var(--color-text);
 }
