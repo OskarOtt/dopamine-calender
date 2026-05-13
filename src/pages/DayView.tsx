@@ -25,6 +25,22 @@ const DayView = () => {
         }
     }, [dateParam]);
 
+    // Auto-advance to next day at midnight
+    useEffect(() => {
+        if (dateParam) return; // Don't auto-advance if a specific date is pinned via URL
+        const scheduleNextMidnight = () => {
+            const now = new Date();
+            const msUntilMidnight =
+                new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1).getTime() - now.getTime();
+            return setTimeout(() => {
+                setSelectedDate(new Date());
+                timeoutRef = scheduleNextMidnight();
+            }, msUntilMidnight);
+        };
+        let timeoutRef = scheduleNextMidnight();
+        return () => clearTimeout(timeoutRef);
+    }, [dateParam]);
+
     const currentDay = (selectedDate.getDay() + 6) % 7; // 0=Monday, 1=Tuesday, ..., 6=Sunday
     const filteredGoals = goals.filter(goal => 
         (goal.isRecurring && goal.day.includes(currentDay)) ||

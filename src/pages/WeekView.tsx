@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useGoals } from "../contexts/GoalsContext.tsx";
 import { GoalModel } from "../models/GoalModel.ts";
 import { getWeekNumber, formatedDate } from "../helpers/helpers.ts";
@@ -8,6 +8,16 @@ import "../style/WeekView.scss";
 
 const WeekView = () => {
     const { goals, setGoals } = useGoals();
+    const getThisWeekMonday = () => {
+        const today = new Date();
+        const day = today.getDay();
+        const diff = day === 0 ? -6 : 1 - day;
+        const monday = new Date(today);
+        monday.setDate(today.getDate() + diff);
+        monday.setHours(0, 0, 0, 0);
+        return monday;
+    };
+
     const [currentWeekStart, setCurrentWeekStart] = useState(() => {
         const today = new Date();
         const day = today.getDay(); // 0=Sun, 1=Mon, ..., 6=Sat
@@ -16,6 +26,25 @@ const WeekView = () => {
         monday.setDate(today.getDate() + diff);
         return monday;
     });
+
+    const isViewingCurrentWeek = useRef(true);
+
+    // Auto-advance week at midnight (only if viewing the current week)
+    useEffect(() => {
+        const scheduleNextMidnight = () => {
+            const now = new Date();
+            const msUntilMidnight =
+                new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1).getTime() - now.getTime();
+            return setTimeout(() => {
+                if (isViewingCurrentWeek.current) {
+                    setCurrentWeekStart(getThisWeekMonday());
+                }
+                timeoutRef = scheduleNextMidnight();
+            }, msUntilMidnight);
+        };
+        let timeoutRef = scheduleNextMidnight();
+        return () => clearTimeout(timeoutRef);
+    }, []);
 
     const weekDays = [];
     for (let i = 0; i < 7; i++) {
@@ -32,6 +61,7 @@ const WeekView = () => {
         setCurrentWeekStart(prev => {
             const newDate = new Date(prev);
             newDate.setDate(prev.getDate() - 7);
+            isViewingCurrentWeek.current = false;
             return newDate;
         });
     };
@@ -40,6 +70,9 @@ const WeekView = () => {
         setCurrentWeekStart(prev => {
             const newDate = new Date(prev);
             newDate.setDate(prev.getDate() + 7);
+            const thisMonday = getThisWeekMonday();
+            newDate.setHours(0, 0, 0, 0);
+            isViewingCurrentWeek.current = newDate.getTime() === thisMonday.getTime();
             return newDate;
         });
     };
