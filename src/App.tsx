@@ -4,6 +4,8 @@ import Nav from "./components/Nav.tsx";
 import MonthView from "./pages/MonthView.tsx";
 import DayView from "./pages/DayView.tsx";
 import Profile from "./pages/Profile.tsx";
+import ProfileLayout from "./pages/ProfileLayout.tsx";
+import Statistics from "./pages/Statistics.tsx";
 import OneTimeGoalsView from "./pages/OneTimeGoalsView.tsx";
 import Modal from "./components/Modal.tsx";
 import AddGoalForm from "./components/AddGoalForm.tsx";
@@ -20,7 +22,10 @@ function AppContent() {
               <Route path="/week" element={<WeekView />} />
               <Route path="/month" element={<MonthView />} />
               <Route path="/one-time" element={<OneTimeGoalsView />} />
-              <Route path="/profile" element={<Profile />} />
+              <Route path="/profile" element={<ProfileLayout />}>
+                  <Route index element={<Statistics />} />
+                  <Route path="manage-goals" element={<Profile />} />
+              </Route>
           </Routes>
           <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
               <AddGoalForm />

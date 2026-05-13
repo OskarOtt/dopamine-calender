@@ -1,3 +1,45 @@
+.profile-layout {
+    background-color: var(--color-bg);
+    min-height: 100%;
+}
+
+.profile-subnav {
+    display: flex;
+    gap: 8px;
+    padding: 16px 20px 0;
+    max-width: 800px;
+    margin: 0 auto;
+    border-bottom: 2px solid var(--color-border);
+    margin-bottom: 0;
+}
+
+.profile-subnav-link {
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 8px 8px 0 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    border: 1px solid transparent;
+    border-bottom: none;
+    transition: all 0.2s ease;
+    position: relative;
+    bottom: -2px;
+}
+
+.profile-subnav-link:hover {
+    color: var(--color-primary);
+    background-color: var(--color-primary-light);
+}
+
+.profile-subnav-link.active {
+    color: var(--color-primary-dark);
+    background-color: var(--color-bg);
+    border-color: var(--color-border);
+    border-bottom-color: var(--color-bg);
+    font-weight: 700;
+}
+
 .profile-container {
     padding: 20px;
     max-width: 800px;
