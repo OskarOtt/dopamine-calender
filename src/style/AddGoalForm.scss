@@ -157,3 +157,22 @@
     margin-right: 10px;
     color: var(--color-text);
 }
+
+.form-input--error {
+    border-color: #e53935;
+    &:focus {
+        border-color: #e53935;
+        box-shadow: 0 0 0 3px rgba(229, 57, 53, 0.15);
+    }
+}
+
+.form-error {
+    color: #e53935;
+    font-size: 13px;
+    margin: -12px 0 16px 0;
+}
+
+.days-selection--error > label:first-child,
+.icon-selection--error > label:first-child {
+    color: #e53935;
+}
