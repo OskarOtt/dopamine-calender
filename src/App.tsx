@@ -9,7 +9,8 @@ import Statistics from "./pages/Statistics.tsx";
 import OneTimeGoalsView from "./pages/OneTimeGoalsView.tsx";
 import Modal from "./components/Modal.tsx";
 import AddGoalForm from "./components/AddGoalForm.tsx";
-import { GoalsProvider, useGoals } from "./contexts/GoalsContext.tsx";
+import { GoalsProvider } from "./contexts/GoalsContext.tsx";
+import { useGoals } from "./contexts/useGoalsHook.ts";
 
 function AppContent() {
     const { showModal, setShowModal } = useGoals();

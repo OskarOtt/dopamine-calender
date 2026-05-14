@@ -1,4 +1,4 @@
-import { useGoals } from "../contexts/GoalsContext.tsx";
+import { useGoals } from "../contexts/useGoalsHook";
 import { GoalModel } from "../models/GoalModel.ts";
 import GoalCheckbox from "../components/GoalCheckbox.tsx";
 import PageHeader from "../components/PageHeader.tsx";

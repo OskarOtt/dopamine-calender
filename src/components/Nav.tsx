@@ -1,6 +1,6 @@
 import "../style/navStyle.scss"
 import {NavLink} from "react-router-dom";
-import { useGoals } from "../contexts/GoalsContext.tsx";
+import { useGoals } from "../contexts/useGoalsHook";
 import logo from "../assets/logo.jpg";
 
 const Nav = () => {

@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { useGoals } from "../contexts/GoalsContext.tsx";
+import { useGoals } from "../contexts/useGoalsHook";
 import { GoalModel } from "../models/GoalModel.ts";
 import { getWeekNumber, formatedDate } from "../helpers/helpers.ts";
 import PageHeader from "../components/PageHeader.tsx";

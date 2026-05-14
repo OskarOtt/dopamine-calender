@@ -1,8 +1,11 @@
 * text=auto
-*.js text eol=lf
-*.mjs text eol=lf
+*.js text eol=lf diff=javascript
+*.mjs text eol=lf diff=javascript
 *.json text eol=lf
-*.ts text eol=lf
-*.tsx text eol=lf
+*.ts text eol=lf diff=javascript
+*.tsx text eol=lf diff=javascript
 *.css text eol=lf
 *.html text eol=lf
+# Ensure dist assets are served with correct MIME types
+dist/**/*.js text eol=lf diff=javascript
+dist/**/*.css text eol=lf

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useGoals } from "../contexts/GoalsContext.tsx";
+import { useGoals } from "../contexts/useGoalsHook";
 import PageHeader from "../components/PageHeader.tsx";
 import { useNavigate } from "react-router-dom";
 import "../style/MonthView.scss";

@@ -1,6 +1,6 @@
 import "../style/dailyGoalStyle.scss"
 import {GoalModel} from "../models/GoalModel.ts";
-import { useGoals } from "../contexts/GoalsContext.tsx";
+import { useGoals } from "../contexts/useGoalsHook";
 import { dayNames, formatedDate } from "../helpers/helpers.ts";
 import GoalCheckbox from "../components/GoalCheckbox.tsx";
 

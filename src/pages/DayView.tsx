@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useGoals } from "../contexts/GoalsContext.tsx";
+import { useGoals } from "../contexts/useGoalsHook";
 import DailyGoal from "../components/DailyGoal.tsx";
 import DailyGoalGroup from "../components/DailyGoalGroup.tsx";
 import PageHeader from "../components/PageHeader.tsx";

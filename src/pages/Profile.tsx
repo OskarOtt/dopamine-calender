@@ -1,4 +1,4 @@
-import { useGoals } from "../contexts/GoalsContext.tsx";
+import { useGoals } from "../contexts/useGoalsHook";
 import { dayNames, formatedDate } from "../helpers/helpers.ts";
 import "../style/Profile.scss";
 

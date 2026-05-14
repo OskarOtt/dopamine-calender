@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import '../style/AddGoalForm.scss';
 import { dayNames } from '../helpers/helpers';
-import { useGoals } from '../contexts/GoalsContext';
+import { useGoals } from '../contexts/useGoalsHook';
 
 const iconOptions = [
     { label: 'Workout', value: '🏋️' },

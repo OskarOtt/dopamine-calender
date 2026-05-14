@@ -1,8 +1,8 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 import { GoalModel } from '../models/GoalModel';
 import { loadGoals, saveGoals } from '../helpers/localStorageHelpers';
 
-interface GoalsContextType {
+export interface GoalsContextType {
     goals: GoalModel[];
     setGoals: React.Dispatch<React.SetStateAction<GoalModel[]>>;
     showModal: boolean;
@@ -10,15 +10,7 @@ interface GoalsContextType {
     handleAddGoal: (data: { title: string; description: string; icon: string; day: number[]; isRecurring: boolean; specificDate: string }) => void;
 }
 
-const GoalsContext = createContext<GoalsContextType | undefined>(undefined);
-
-export const useGoals = () => {
-    const context = useContext(GoalsContext);
-    if (!context) {
-        throw new Error('useGoals must be used within a GoalsProvider');
-    }
-    return context;
-};
+export const GoalsContext = createContext<GoalsContextType | undefined>(undefined);
 
 export const GoalsProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const [goals, setGoals] = useState<GoalModel[]>([]);
